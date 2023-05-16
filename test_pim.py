@@ -39,12 +39,12 @@ def test_TC_pim_02():
     # driver.refresh()
     driver.implicitly_wait(10)
     driver.find_element(By.XPATH, "//a[text()='Employee List']").click()
-    driver.find_element(By.XPATH, "//input[@placeholder='Type for hints...']")\
+    driver.find_element(By.XPATH, "//input[@placeholder='Type for hints...']") \
         .send_keys(readData['Name'][0].get('FirstName'))
     driver.find_element(By.XPATH, '//button[text()=" Search "]').click()
     driver.find_element(By.XPATH, "//i[@class='oxd-icon bi-pencil-fill']").click()
     time.sleep(5)
-    driver.find_element(By.XPATH, "//div[@class='oxd-form-row'][2]/child::div[2]//input")\
+    driver.find_element(By.XPATH, "//div[@class='oxd-form-row'][2]/child::div[2]//input") \
         .send_keys(readData["License_No"])
     driver.find_element(By.XPATH, "//div[@class='oxd-select-wrapper']/child::div//i").click()
     driver.find_element(By.XPATH, "//div[@class='oxd-date-input']/input").send_keys("2023-12-31")
@@ -55,7 +55,7 @@ def test_TC_pim_02():
     driver.find_element(By.XPATH, "//div[@class='oxd-select-wrapper']/../following::div").click()
     driver.find_element(By.XPATH, "//span[text()='Married']").click()
 
-    driver.find_element(By.XPATH, "//div[@class='oxd-date-wrapper']//input").send_keys(readData["DOB"])
+    driver.find_element(By.XPATH, "//label[text()='Date of Birth']/../following::div//input").send_keys(readData["DOB"])
 
     driver.find_element(By.XPATH, "//div[@role='tablist']/div[6]/a").click()
     time.sleep(5)
