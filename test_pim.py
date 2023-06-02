@@ -39,7 +39,7 @@ def test_TC_pim_02():
     # driver.refresh()
     driver.implicitly_wait(10)
     driver.find_element(By.XPATH, "//a[text()='Employee List']").click()
-    driver.find_element(By.XPATH, "//input[@placeholder='Type for hints...']") \
+    driver.find_element(By.XPATH, "//input[contains(@placeholder, 'Type')]") \
         .send_keys(readData['Name'][0].get('FirstName'))
     driver.find_element(By.XPATH, '//button[text()=" Search "]').click()
     driver.find_element(By.XPATH, "//i[@class='oxd-icon bi-pencil-fill']").click()
